@@ -38,6 +38,13 @@ export function MainRoutes() {
       element: _Login
     },
     {
+      path: 'log/create/:type',
+      element: <PrivateRoute element={CreateLog} meta={{
+        requiresAuth: true,
+        title: '日志创建'
+      }} />
+    },
+    {
       path: '/home',
       element: <MainEntry />,
       children: [
@@ -46,8 +53,9 @@ export function MainRoutes() {
           element: <PrivateRoute element={HomeIndex} meta={{
         //    requiresAuth: true,
             title: '后台首页'
-          }} />,
+          }} />
         },
+        
         {
           path: 'log',
           element: <PrivateRoute element={Log} meta={{
@@ -55,13 +63,7 @@ export function MainRoutes() {
             title: '日志管理'
           }} />
         },
-        {
-          path: 'log/create/:type',
-          element: <PrivateRoute element={CreateLog} meta={{
-            requiresAuth: true,
-            title: '日志创建'
-          }} />
-        },
+       
         {
           path: 'log/detail/:id',
           element: <PrivateRoute element={CreateLog} meta={{
