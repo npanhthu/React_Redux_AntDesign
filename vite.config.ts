@@ -13,10 +13,10 @@ export default defineConfig({
   },
 
   server: {
-    port: 7001,
+    port: 80,
     proxy: {
       '/api/passport': {
-        target: 'http://localhost:7003',
+        target: 'http://0.0.0.0:80',
         changeOrigin: true,
       },
     }
