@@ -13,7 +13,7 @@
     "dev": "vite",
     "start": "vite",
     "start:prod": "vite --mode prod",
-    "build": "tsc && vite build --mode prod && vite --mode prod",
+    "build": "tsc && vite build --mode prod",
     "serve": "vite --host preview",
     "lint": "eslint --cache --ext .js,.jsx,.tsx,.ts ./src"
   },

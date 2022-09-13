@@ -3,6 +3,7 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 import path from 'path'
 
 // https://vitejs.dev/config/
+const port : any = process.env.PORT || 3000
 export default defineConfig({
   plugins: [reactRefresh()],
 
@@ -13,10 +14,10 @@ export default defineConfig({
   },
 
   server: {
-    port: 3000,
+    port: port,
     proxy: {
       '/api/passport': {
-        target: 'http://0.0.0.0:3000',
+        target: `http://0.0.0.0:${port}`,
         changeOrigin: true,
       },
     }
